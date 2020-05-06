@@ -51,9 +51,9 @@
 
         }
 
-        public ActionResult EditFriend(int number)
+        public ActionResult EditFriend(int id)
         {
-            Friend friend = friends.First(x => x.ID == number);
+            Friend friend = friends.First(x => x.ID == id);
             return View(friend);
         }
 
@@ -72,12 +72,12 @@
             forUpdate.MastoZiveenje = model.MastoZiveenje;
 
             return View("FriendView", friends);
-
         }
 
-        public ActionResult DeleteFriend(int number)
+
+        public ActionResult DeleteFriend(int id)
         {
-            Friend friend = friends.First(x => x.ID == number);
+            Friend friend = friends.First(x => x.ID == id);
             friends.Remove(friend);
             return View("FriendView", friends);
         }
