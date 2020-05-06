@@ -15,8 +15,8 @@ namespace LaboratoriskaMVC1
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{number}",
-                defaults: new { controller = "Home", action = "Index", number = UrlParameter.Optional }
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "index", id = UrlParameter.Optional }
             );
         }
     }
