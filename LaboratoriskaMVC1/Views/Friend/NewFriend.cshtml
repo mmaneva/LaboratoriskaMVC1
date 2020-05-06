@@ -1,0 +1,33 @@
+﻿@model LaboratoriskaMVC1.Models.Friend
+
+@{
+    ViewBag.Title = "NewFriend";
+}
+
+<h2>New Friend</h2>
+
+@using (Html.BeginForm("NewFriend", "Friend"))
+{
+    @Html.HiddenFor(m => m.ID)
+    <div class="form-group">
+        @Html.LabelFor(m => m.FriendId) @Html.TextAreaFor(m => m.FriendId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FriendId)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Ime) @Html.TextAreaFor(m => m.Ime, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Ime)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MastoZiveenje) @Html.TextAreaFor(m => m.MastoZiveenje, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MastoZiveenje)
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    @Html.ActionLink("Back", "FriendView", new { }, new { @class = "btn btn-primary" })
+
+}
+
+

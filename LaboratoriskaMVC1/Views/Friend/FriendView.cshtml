@@ -1,0 +1,32 @@
+﻿@model List<LaboratoriskaMVC1.Models.Friend>
+ 
+@{
+    ViewBag.Title = "FriendView";
+}
+
+<h2>Friend table</h2>
+
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Friend Id</th>
+        <th>Friend Name</th>
+        <th>Place</th>
+        <th> </th>
+    </tr>
+    @{
+
+        foreach (var d in Model)
+        {
+            <tr>
+                <td>@d.FriendId</td>
+                <td>@d.Ime</td>
+                <td>@d.MastoZiveenje</td>
+                <td>
+                    <a href="/Friend/EditFriend/@d.ID">Edit</a><br />
+                    <a href="/Friend/DeleteFriend/@d.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
